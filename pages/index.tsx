@@ -1,11 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import { useRouter } from 'next/router';
+import Promo from '../components/promo.js'
+import Footer from '../components/Footer.js'
+import Navbar from '../components/Navbar.js'
 
-const inter = Inter({ subsets: ['latin'] })
+interface UsersProps {
+  dataMenu: Array<any>;
+  dataPromo:Array<any>;
+}
+export default function Home(props: UsersProps) {
+  const {dataMenu,dataPromo} = props;
+  const router = useRouter();
 
-export default function Home() {
   return (
     <>
       <Head>
@@ -14,110 +21,65 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <div className=''>
+      <Navbar />
+      </div>
+      <section className='bg-secondary overflow-hidden z-30'>
+      <div className=''>
+     <Promo/>
+      </div>
+     </section>
+      {/* menu panel */}
+      <section className='bg-secondary py-4 overflow-hidden z-30'>
+        <h1 className='text-primary text-lg font-bold text-center mb-5'>Menu</h1>
+        <div className='container px-4 lg:px-0 lg:max-w-6xl '>
+          <div className='flex flex-wrap lg:justify-between justify-center'>
+            <div className='flex items-center justify-center lg:w-1/3 w-full'>
+                <h1 className='bg-white hover:bg-slate-100 rounded-lg w-20 text-center mr-2 text-sm  text-primary shadow-lg cursor-pointer'>#Drink</h1>
+                <h1 className='bg-white hover:bg-slate-100 rounded-lg w-20 text-center mr-2 text-sm text-primary shadow-lg cursor-pointer'>#Food</h1>
+                <h1 className='bg-white hover:bg-slate-100 rounded-lg w-20 text-center mr-2 text-sm text-primary shadow-lg cursor-pointer'>#Dessert</h1>
+                </div>
+             <div className='lg:w-1/3 w-full mt-5 lg:mt-0'>
+              <div className='flex justify-center'>
+              <input type={'text'} className='h-8 w-56 rounded-bl-lg rounded-tl-lg shadow-lg focus:border-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500'/>
+                <button className='bg-primary h-8 w-8 rounded-br-lg rounded-tr-lg shadow-lg text-white font-bold hover:bg-third'>G</button>
+                </div>
+             </div>
           </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
+          <div className='flex flex-wrap mt-5'>
+              {dataMenu.map((user) => (
+                <div key={user.id} id={user.type} className='w-1/2 lg:w-1/4 px-4 mb-2' onClick={()=> router.push (`/Menu/${user.id}`)}>
+                  <div className='bg-white hover:bg-slate-100 rounded-xl shadow-xl mx-auto py-4 mb-4 lg:w-64 lg:h-60 cursor-pointer'>
+                    <img src={user.Image} alt='' className='mx-auto lg:w-40 lg:h-40 w-20 h-20'/>
+                    <h1 className='text-center text-lg font-bold'>{user.nama}</h1>
+                    <h1 className='text-center text-base'>{user.harga}</h1>
+                   
+                  </div>
+                </div>
+            ))}
           </div>
+         
+          <div className='flex items-center justify-center lg:mb-5 mb-16'>
+          <button className='px-4 py-2 w-52 bg-primary hover:bg-third rounded-lg text-white font-bold'>Load More</button>  
+          </div>
+         
         </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+      </section>
+      <div className='relative'>
+      <Footer />
+      </div>
     </>
-  )
+  )  
+}
+export async function getStaticProps() {
+  const res = await fetch ('https://json-blueheron.vercel.app/menu')
+  const dataMenu = await res.json()
+  const rus = await fetch ('https://json-blueheron.vercel.app/promo/')
+  const dataPromo = await rus.json()
+  return {
+      props :{
+          dataMenu,
+          dataPromo
+      }
+  }
 }
