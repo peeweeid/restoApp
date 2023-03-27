@@ -4,7 +4,8 @@ import Image from 'next/image'
 import LogoB from '../public/blueheron.svg'
 import { AiFillHome} from "@react-icons/all-files/ai/AiFillHome";
 import { AiOutlineLogin} from "@react-icons/all-files/ai/AiOutlineLogin";
-
+import { BiFoodMenu } from "@react-icons/all-files/bi/BiFoodMenu";
+import { RiFilePaperFill } from "@react-icons/all-files/ri/RiFilePaperFill";
 function Navbar() {
   return (
     <>
@@ -40,11 +41,11 @@ function Navbar() {
                 
                 </div>
                 <div className='mx-auto flex items-center justify-center'>
-                    <Link href={'/Services'} className='text-primary font-semibold mr-5 hover:text-secondary text-2xl'>isi</Link>
+                    <Link href={'/Services'} className='text-primary font-semibold mr-5 hover:text-secondary text-2xl'><BiFoodMenu/></Link>
                 </div>
                 <div className='mx-auto flex items-center justify-center '>
 
-                    <Link href={'/Riwayat'} className='text-primary font-semibold mr-5 hover:text-secondary text-2xl'>isi</Link>
+                    <Link href={'/Riwayat'} className='text-primary font-semibold mr-5 hover:text-secondary text-2xl'><RiFilePaperFill/></Link>
                 </div>
                 <div className='mx-auto flex items-center justify-center '>
                     
