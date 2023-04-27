@@ -37,6 +37,7 @@ const Pokeid= ({dataService}:any) => {
                     </div>
                     <div className='lg:w-1/2 w-full mt-2 lg:mt-16'>
                         <form class="form" onSubmit={event => { event.preventDefault(); onSubmit(); }} >  
+                            <fieldset>
                         <div className=' py-4 px-4 w-[300px] lg:w-[400px] mx-auto bg-white'>
                             <h1 className='text-center text-sm'>{dataService.diskripsi}</h1>
                                 
@@ -77,6 +78,7 @@ const Pokeid= ({dataService}:any) => {
                                 <button type="submit" className='text-xl font-bold rounded-lg  bg-primary hover:bg-third px-8 py-2 mt-5 w-full text-white'> Order </button>
                             </div>
                         </div>
+                         <fieldset>
                         </form>
                     </div>     
                 </div> 
