@@ -16,7 +16,7 @@ const Pokeid= ({dataService}:any) => {
         const docRef = await addDoc(collectionRef, {...todo,timestamp:
         serverTimestamp( ) })
         setTodo({nama:'',paket:'',porsi:'',waktu:'',img:''})
-     
+     alert(`code order : ${docRef.id} berhasil ditambahkan`)
     }
   return (  
     <>
