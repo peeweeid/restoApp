@@ -1,9 +1,20 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from '../../components/Footer.js'
 import Navbar from '../../components/Navbar.js'
+
 const Pokeid= ({dataMenu}:any) => {
-    
+  
+    const [numCount, setNumCount] = useState(0)
+  const plus = () => {
+    setNumCount(numCount + 1)
+  }
+  const minus = () => {
+    setNumCount(numCount - 1)
+  }
+  const reset = () => {
+    setNumCount(0)
+  }
   return (  
     <>
          <div className=''>
@@ -23,9 +34,9 @@ const Pokeid= ({dataMenu}:any) => {
                             </div>
                             <p className='px-4 text-xs text-justify mt-4'>{dataMenu.diskripsi}</p>
                             <div className='flex flex-wrap justify-center items-center mt-5 mx-4'>
-                               <div className='mr-2'> <button className='bg-secondary rounded-xl px-4 py-2 text-xl font-bold text-primary'>-</button></div>
-                              <div className='mr-2'>  <h1 className='text-xl font-bold text-primary'>0</h1></div>
-                               <div className='mr-2'> <button className='bg-secondary rounded-xl px-4 py-2 text-xl font-bold text-primary'>+</button></div>
+                               <div className='mr-2'> <button className='bg-secondary rounded-xl px-4 py-2 text-xl font-bold text-primary'  onClick={minus}>-</button></div>
+                              <div className='mr-2'>  <h1 className='text-xl font-bold text-primary'>{numCount}</h1></div>
+                               <div className='mr-2'> <button className='bg-secondary rounded-xl px-4 py-2 text-xl font-bold text-primary'  onClick={plus} style={{ marginRight: '1rem' }}>+</button></div>
                             </div>
                             <div className='flex items-center justify-center'>
                             <button className='text-xl font-bold rounded-lg bg-primary px-8 py-2 mt-5 w-full text-white'> add chart </button>
