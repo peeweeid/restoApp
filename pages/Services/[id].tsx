@@ -36,7 +36,7 @@ const Pokeid= ({dataService}:any) => {
                         <img src={dataService.Image}  alt="" className=' lg:w-[350px] lg:h-auto mx-auto  '/>
                     </div>
                     <div className='lg:w-1/2 w-full mt-2 lg:mt-16'>
-                        <form class="form" onSubmit={event => { event.preventDefault(); onSubmit(); }} data-validation-minmaxlength-message="This message will override the default rule message, and only use [minToken].">  
+                        <form class="form" onSubmit={event => { event.preventDefault(); onSubmit(); }} >  
                         <div className=' py-4 px-4 w-[300px] lg:w-[400px] mx-auto bg-white'>
                             <h1 className='text-center text-sm'>{dataService.diskripsi}</h1>
                                 
