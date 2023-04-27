@@ -18,7 +18,7 @@ export default function Services(props: UsersProps) {
        <div className=''>
       <Navbar />
       </div>
-      <section className='bg-secondary py-4 overflow-hidden -z-30  lg:h-[750px] '>
+      <section className='bg-secondary py-4 overflow-hidden -z-30  lg:h-[750px] cursor-pointer'>
         <h1 className='text-primary lg:text-2xl text-lg font-bold text-center mt-5 lg:mt-16 mb-5 lg:mb-16'>Service BLueheron</h1>
         <div className='container px-4 lg:px-0 lg:max-w-6xl '>
           
