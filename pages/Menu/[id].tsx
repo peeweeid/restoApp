@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Footer from '../../components/Footer.js'
 import Navbar from '../../components/Navbar.js'
-
+import Image from 'next/image'
 const Pokeid= ({dataMenu}:any) => {
   
     const [numCount, setNumCount] = useState(0)
