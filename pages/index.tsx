@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import React,{useState} from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router';
 import Promo from '../components/promo.js'
@@ -13,6 +14,36 @@ export default function Home(props: UsersProps) {
   const {dataMenu,dataPromo} = props;
   const router = useRouter();
 
+ const slides=[
+    {
+      url: 'https://raw.githubusercontent.com/peeweeid/BahanBlueheron/main/image/slider%201.jpg',
+    },
+    {
+        url: 'https://raw.githubusercontent.com/peeweeid/BahanBlueheron/main/image/slider%202.jpg',
+    },
+    {
+        url: 'https://raw.githubusercontent.com/peeweeid/BahanBlueheron/main/image/slider%203.jpg',
+    },
+    ];
+    
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const prevSlide = () => {
+      const isFirstSlide = currentIndex === 0;
+      const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+      setCurrentIndex(newIndex);
+    };
+    
+    const nextSlide = () => {
+      const isLastSlide = currentIndex === slides.length - 1;
+      const newIndex = isLastSlide ? 0 : currentIndex + 1;
+      setCurrentIndex(newIndex);
+    };
+    
+    const goToSlide = (slideIndex:any) => {
+      setCurrentIndex(slideIndex);
+    };
+    
   return (
     <>
       <Head>
@@ -26,7 +57,33 @@ export default function Home(props: UsersProps) {
       </div>
       <section className='bg-secondary overflow-hidden z-30'>
       <div className=''>
-     <Promo/>
+     
+          <div className=' lg:h-[700px] lg:w-[1320px] h-[175px]  w-[330px] m-auto lg:py-10 py-4 px-4 mb-5 relative group'>
+      <div
+        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+        className='w-full h-full bg-center bg-cover duration-200'
+      ></div>
+      {/* Left Arrow */}
+      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+       
+      </div>
+      {/* Right Arrow */}
+      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+        
+      </div>
+      <div className='flex top-4 justify-center py-2'>
+        {slides.map((slide, slideIndex) => (
+          <div
+            key={slideIndex}
+            onClick={() => goToSlide(slideIndex)}
+            className='text-2xl cursor-pointer'
+          >
+           o
+          </div>
+        ))}
+      </div>
+    </div>
+        
       </div>
      </section>
       {/* menu panel */}
