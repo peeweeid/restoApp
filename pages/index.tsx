@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React,{useState} from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router';
-import Promo from '../components/promo.js'
+
 import Footer from '../components/Footer.js'
 import Navbar from '../components/Navbar.js'
 
