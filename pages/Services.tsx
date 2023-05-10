@@ -27,7 +27,7 @@ export default function Services(props: UsersProps) {
                 <div key={user.id}  className='w-full lg:w-1/3 px-4 cursor-pointer  ' onClick={()=> router.push (`/Services/${user.id}`)} >
                   <div className='px-4 py-4 mb-4 rounded-lg bg-white hover:bg-slate-200 flex flex-wrap cursor-pointer '>
                      
-                        <img src={user.Image} alt='' className='mx-auto cursor-pointer '/>
+                        <Image src={user.Image} alt='' className='mx-auto cursor-pointer '  width={400} height={400}/>
 
                   </div>
                   
