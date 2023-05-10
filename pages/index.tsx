@@ -58,7 +58,7 @@ export default function Home(props: UsersProps) {
       <section className='bg-secondary overflow-hidden z-30'>
       <div className=''>
      
-          <div className=' lg:h-[700px] lg:w-[1320px] h-[280px]  w-[528px] m-auto lg:py-10 py-4 px-4 mb-5 relative group'>
+          <div className=' lg:h-[700px] lg:w-[1320px] h-[245px]  w-[462px] m-auto lg:py-10 py-4 px-4 mb-5 relative group'>
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className='w-full h-full bg-center bg-cover duration-200'
