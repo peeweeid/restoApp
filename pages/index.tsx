@@ -107,7 +107,7 @@ export default function Home(props: UsersProps) {
               {dataMenu.map((user) => (
                 <div key={user.id} id={user.type} className='w-1/2 lg:w-1/4 px-4 mb-2' onClick={()=> router.push (`/Menu/${user.id}`)}>
                   <div className='bg-white hover:bg-slate-100 rounded-xl shadow-xl mx-auto py-4 mb-4 lg:w-64 lg:h-60 cursor-pointer'>
-                    <img src={user.Image} alt='' className='mx-auto lg:w-40 lg:h-40 w-20 h-20'/>
+                    <Image src={user.Image} alt='' className='mx-auto lg:w-40 lg:h-40 w-20 h-20' width={100} height={100}/>
                     <h1 className='text-center text-lg font-bold'>{user.nama}</h1>
                     <h1 className='text-center text-base'>{user.harga}</h1>
                    
