@@ -24,7 +24,7 @@ const Pokeid= ({dataMenu}:any) => {
             <div className='container '>
                 <div className='flex flex-wrap items-center justify-center py-4 '>
                     <div className='lg:w-1/2 w-full h-96 lg:translate-y-1/2'>
-                        <img src={dataMenu.Image} alt="" className='w-72 h-80 lg:w-[350px] lg:h-auto mx-auto pt-16 pb-0 mb-48 '/>
+                        <Image src={dataMenu.Image} alt="" className='w-72 h-80 lg:w-[350px] lg:h-auto mx-auto pt-16 pb-0 mb-48'  width={400} height={400}/>
                     </div>
                     <div className='lg:w-1/2 w-full lg:translate-y-1/2 '>
                         <div className='bg-white rounded-lg py-4 px-4 w-[300px] lg:w-[400px] mx-auto'>
