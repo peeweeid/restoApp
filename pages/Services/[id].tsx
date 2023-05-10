@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { db } from '../../firebase'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
-
+import Image from 'next/image'
 import { collection, serverTimestamp,addDoc } from 'firebase/firestore'
 import Footer from '../../components/Footer.js'
 import Navbar from '../../components/Navbar.js'
@@ -35,7 +35,7 @@ const Pokeid= ({dataService}:any) => {
                 <div className='flex flex-wrap items-center justify-center py-4 '>  
                     <div className='lg:w-1/2 w-full h-96 mt-2 lg:mt-16'>
                         <h1 className='text-center font-bold text-primary text-xl'>{dataService.nama}</h1>
-                        <img src={dataService.Image}  alt="" className=' lg:w-[350px] lg:h-auto mx-auto  '/>
+                        <Image src={dataService.Image}  alt="" className=' lg:w-[350px] lg:h-auto mx-auto' width={400} height={400}/>
                     </div>
                     <div className='lg:w-1/2 w-full mt-2 lg:mt-16'>
                         <div className=' py-4 px-4 w-[300px] lg:w-[400px] mx-auto bg-white'>
